@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memoree</title>
+    <style>
+      body {
+        font-family: Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-color: #f0f0f0; */
+        background-color: #f9f4f2;
+      }
+
+      .carousel-container {
+        width: 100%;
+        max-width: 700px;
+        position: relative;
+        overflow: hidden;
+        /* border-radius: 10px; */
+        /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+      }
+
+      .carousel-slide {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .carousel-item {
+        display: flex;
+        min-width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f9f4f2;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+
+      .carousel-item img {
+        max-width: 50%;
+        border-radius: 8px;
+        /* margin-right: 20px; */
+        transition: transform 0.1s ease-out;
+        transform-style: preserve-3d; /* Ensure 3D transforms are enabled */
+      }
+
+      .carousel-item .text-tile {
+        flex: 1;
+        background-color: #007bff;
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .text-tile h2 {
+        margin: 0 0 10px;
+      }
+
+      .text-tile p {
+        margin: 0;
+        color: #fff;
+        font-weight: 300;
+        font-size: 15px;
+      }
+
+      /* Navigation buttons */
+      .carousel-button {
+        position: absolute;
+        top: 22%;
+        /* transform: translateY(-50%); */
+        background-color: rgba(0, 0, 0, 0.3);
+        border: none;
+        border-radius: 30px;
+        color: white;
+        cursor: pointer;
+        padding: 10px 20px;
+        /* margin: 10px; */
+        z-index: 100;
+        transition: background-color 0.3s;
+      }
+
+      .carousel-button:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+
+      .carousel-button.prev {
+        left: 0;
+      }
+
+      .carousel-button.next {
+        right: 0;
+      }
+
+      /* Responsive design for smaller screens */
+      @media (max-width: 768px) {
+        .carousel-item {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .carousel-item img {
+          max-width: 60%;
+          /* margin: 0 auto 20px; */
+          margin: 0 auto;
+        }
+
+        .carousel-item .text-tile {
+          padding: 20px;
+          box-shadow: none;
+        }
+      }
+
+      /* Container holding image and text */
+      .image-text-container {
+        display: flex;
+        align-items: center; /* This vertically centers the text */
+        gap: 15px; /* Space between image and text */
+        width: 300px;
+        height: 80px;
+        margin: 0 auto;
+      }
+
+      /* Image styling */
+      .image-text-container img {
+        max-width: 45px; /* Adjust the width of the image */
+        height: auto; /* Maintain aspect ratio */
+      }
+
+      /* Text styling */
+      .image-text-container .text-content {
+        color: #333;
+      }
+
+      .download-buttons-row {
+        width: 500px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        font-family: georgia, times, Times New Roman, times-roman, serif;
+        /* color: #444; */
+        font-size: 51px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="carousel-container">
+      <div class="image-text-container">
+        <img src="/assets/img/logo.png" alt="logo" />
+        <div class="text-content">
+          <h1>Memoree</h1>
+        </div>
+      </div>
+      <p
+        style="
+          width: 550px;
+          margin: 0 auto;
+          padding-bottom: 10px;
+          font-family: Helvetica, times, Times New Roman, times-roman, georgia,
+            serif;
+          color: #444;
+          font-size: 20px;
+        "
+      >
+        Master Any Subject With Flashcards and Spaced Repetition
+      </p>
+      <div class="download-buttons-row">
+        <a href="https://www.google.com/"
+          ><img
+            alt="Get it on Google Play"
+            src="assets/img/playstore2.png"
+            height="74"
+        /></a>
+        <a href="">
+          <img
+            height="74"
+            src="assets/img/appstore.svg"
+            alt="Download on the App Store"
+        /></a>
+      </div>
+      <div class="carousel-slide" id="carouselSlide">
+        <!-- Slide 0 -->
+        <div class="carousel-item">
+          <img src="assets/img/r00.png" id="tiltImage" alt="Image 0" />
+          <div class="text-tile">
+            <h2>Your Ultimate Flashcard App!</h2>
+            <p>
+              You shouldn't need to take a course to learn how to use a
+              flashcard app! Memoree is designed to get you creating, studying,
+              and winning in no time!
+            </p>
+          </div>
+        </div>
+        <!-- Slide 1 -->
+        <div class="carousel-item">
+          <img src="assets/img/r22.png" id="tiltImage" alt="Image 1" />
+          <div class="text-tile">
+            <h2>Create Decks and Sub-decks</h2>
+            <p>
+              Create decks and sub-decks to keep your flashcards in perfect
+              order. Group topics however you like and stay on top of your
+              studies! Easily share your decks with your friends and classmates
+              to make studying a group effort.
+            </p>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <img src="assets/img/r11.png" alt="Image 2" />
+          <div class="text-tile">
+            <h2>Organize</h2>
+            <p>
+              Easily organize your flashcards. Got notes or flashcards in a
+              spreadsheet? No problem! Quickly import your content into Memoree
+              and hit the ground running.
+            </p>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <img src="assets/img/r33.png" alt="Image 3" />
+          <div class="text-tile">
+            <h2>Create Flashcards with Rich Text and Images</h2>
+            <p>
+              Add high-quality images, rich text, and even hashtags to your
+              flashcards! Zoom in on images with a long press and make learning
+              more visual and interactive.
+            </p>
+          </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="carousel-item">
+          <img src="assets/img/r44.png" alt="Image 4" />
+          <div class="text-tile">
+            <h2>Study and Review</h2>
+            <p>
+              Study your flashcards at your pace, and Memoree will remind you
+              when you need to review cards from different topics.
+            </p>
+          </div>
+        </div>
+        <!-- Slide 5 -->
+        <div class="carousel-item">
+          <img src="assets/img/r55.png" alt="Image 5" />
+          <div class="text-tile">
+            <h2>Spaced Repetition</h2>
+            <p>
+              Everything works perfectly out of the box. But if you want more
+              control, you can always modify spaced repetition settings.
+            </p>
+          </div>
+        </div>
+        <!-- Slide 6 -->
+        <div class="carousel-item">
+          <img src="assets/img/r66.png" alt="Image 6" />
+          <div class="text-tile">
+            <h2>Powerful Search</h2>
+            <p>
+              Looking for a specific term or hashtag? Easily search through all
+              of your flashcards or specific decks to find what you need, when
+              you need it!
+            </p>
+          </div>
+        </div>
+        <!-- Slide 7 -->
+        <div class="carousel-item">
+          <img src="assets/img/r77.png" alt="Image 7" />
+          <div class="text-tile">
+            <h2>Track Your Progress</h2>
+            <p>
+              Stay motivated by tracking your scores and progress over time. See
+              how far you've come and what's left to conquer!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation buttons -->
+      <button class="carousel-button prev" id="prevBtn">&#10094;</button>
+      <button class="carousel-button next" id="nextBtn">&#10095;</button>
+    </div>
+
+    <script>
+      const slide = document.getElementById("carouselSlide");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+
+      let currentIndex = 0;
+
+      function showSlide(index) {
+        const slideWidth = slide.clientWidth;
+        slide.style.transform = `translateX(-${index * slideWidth}px)`;
+      }
+
+      nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % 8; // Assuming 8 slides
+        showSlide(currentIndex);
+      });
+
+      prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + 8) % 8; // Assuming 8 slides
+        showSlide(currentIndex);
+      });
+
+      const image = document.getElementById("tiltImage");
+
+      // Add event listener for mouse movement
+      document.addEventListener("mousemove", function (e) {
+        const screenWidth = window.innerWidth;
+        const mouseX = e.clientX;
+
+        // Calculate the rotation based on the mouse position
+        const maxRotation = 15; // Maximum tilt angle in degrees
+        const rotation =
+          (mouseX / screenWidth) * (2 * maxRotation) - maxRotation;
+
+        // Apply the rotation to the image
+        image.style.transform = `rotate(${rotation}deg)`;
+      });
+
+      // Add event listener for mouse movement
+      // document.addEventListener("mousemove", function (e) {
+      //   const screenWidth = window.innerWidth;
+      //   const mouseX = e.clientX;
+
+      //   // Calculate the Y-axis rotation based on mouse position
+      //   const maxRotation = 80; // Maximum tilt angle in degrees
+      //   const rotationY =
+      //     (mouseX / screenWidth) * (2 * maxRotation) - maxRotation;
+
+      //   // Apply the Y-axis rotation to the image
+      //   image.style.transform = `rotateY(${rotationY}deg)`;
+      // });
+    </script>
+  </body>
+</html>
