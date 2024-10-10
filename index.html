@@ -1,51 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memoree</title>
+  </head>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .container {
+        max-width: 700px;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    h1 {
+        color: #2c3e50;
+    }
+    .feature {
+        display: flex;
+        margin-bottom: 40px;
+        align-items: center;
+    }
+    .feature img {
+        width: 50%;
+        max-width: 300px;
+        margin-right: 20px;
+    }
+    .feature-content {
+        flex: 1;
+    }
+    h2 {
+        color: #3498db;
+    }
+    @media (max-width: 600px) {
+        .feature {
+            flex-direction: column;
+        }
+        .feature img {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+    }
+/* .blinking-button {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  background-color: #b7b7b7;
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size:    16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50%;
+  animation: blink 1.5s linear infinite;
+} */
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <title>Memoree - Spaced Repetition Using Flashcards</title>
-  <!-- Favicon-->
-  <!-- link rel="icon" type="image/x-icon" href="assets/img/logo.png" / -->
-  <!-- Font Awesome icons (free version)-->
-  <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
-  <!-- Google fonts-->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
-    type="text/css" />
-  <!-- Core theme CSS (includes Bootstrap)-->
-  <link href="css/styles.css" rel="stylesheet" />
-</head>
+.blinking-button {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  /* color: white; */
+  /* background-color: #b7b7b7; */
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 50%;
+  animation: blink 2.5s linear infinite;
+}
 
-<body>
-  <!-- Masthead-->
-  <header class="masthead bg-primary text-white text-center">
-    <div class="container d-flex align-items-center flex-column">
-      <!-- Masthead Avatar Image-->
-      <!-- img class="" src="assets/img/transparent.png" alt="" height="360" / -->
-      <!-- Masthead Heading-->
-      <h1 class="masthead-heading mb-0">Memoree</h1>
-      <!-- Icon Divider-->
-      <div class="divider-custom divider-light">
-        <div class="divider-custom-line"></div>
+@keyframes blink {
+  0% { opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { opacity: 0; }
+}
+
+.blinking-button i {
+  display: block;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  padding: 7px;
+  transform: rotate(45deg);
+}
+</style>
+  <body>
+    <div class="container">
+    <header>
+      <h1>Memoree</h1>
+      <h3>Memorize Anything Using Spaced Repetition And Flashcards</h3>
+    </header>
+
+    <main>
+      <section class="feature">
+        <img src="assets/img/0.png" alt="Feature 1 Screenshot" />
+        <div class="feature-content">
+          <h2>Your Ultimate Flashcard App!</h2>
+          <p>
+            You shouldn't need to take a course to learn how to use a flashcard
+            app! Memoree is designed to get you creating, studying, and winning
+            in no time!
+          </p>
+        </div>
+      </section>
+
+      <section class="feature">
+        <img src="assets/img/2.png" alt="Feature 2 Screenshot" />
+        <div class="feature-content">
+          <h2>Create Decks and Sub-decks</h2>
+          <p>
+            Create decks and sub-decks to keep your flashcards in perfect order.
+            Group topics however you like and stay on top of your studies! Share
+            your decks with your friends and classmates to make studying a group
+            effort.
+          </p>
+        </div>
+      </section>
+
+      <section class="feature">
+        <img src="assets/img/1.png" alt="Feature 3 Screenshot" />
+        <div class="feature-content">
+          <h2>Organize</h2>
+          <p>
+            Easily organize your flashcards. Got notes or flashcards in a
+            spreadsheet? No problem! Quickly import your content into Memoree
+            and hit the ground running.
+          </p>
+        </div>
+      </section>
+
+      <section class="feature">
+        <img src="assets/img/3.png" alt="Feature 4 Screenshot" />
+        <div class="feature-content">
+          <h2>Create Flashcards with Rich Text and Images</h2>
+          <p>
+            Add high-quality images, rich text, and even hashtags to your
+            flashcards! Zoom in on images with a long press and make learning
+            more visual and interactive.
+          </p>
+        </div>
+      </section>
+
+      <section class="feature">
+        <img src="assets/img/4.png" alt="Feature 5 Screenshot" />
+        <div class="feature-content">
+          <h2>Study and Review</h2>
+          <p>
+            Study your flashcards at your pace, and Memoree will remind you when
+            you need to review cards from different topics.
+          </p>
+        </div>
+      </section>
+
+      <section class="feature">
+        <img src="assets/img/5.png" alt="Feature 6 Screenshot" />
+        <div class="feature-content">
+          <h2>Configurable Spaced Repetition</h2>
+          <p>
+            Everything works perfectly out of the box. But if you want more
+            control, you can always modify spaced repetition settings.
+          </p>
+        </div>
+      </section>
+
+      <section class="feature">
+        <img src="assets/img/6.png" alt="Feature 7 Screenshot" />
+        <div class="feature-content">
+          <h2>Powerful Search</h2>
+          <p>
+            Looking for a specific term or hashtag? Easily search through all of
+            your flashcards or specific decks to find what you need, when you
+            need it!
+          </p>
+        </div>
+      </section>
+
+      <section class="feature">
+        <img src="assets/img/7.png" alt="Feature 8 Screenshot" />
+        <div class="feature-content">
+          <h2>Track Your Progress</h2>
+          <p>
+            Stay motivated by tracking your scores and progress over time. See
+            how far you've come and what's left to conquer!
+          </p>
+        </div>
+      </section>
+      <!-- Add more feature sections as needed -->
+
+      <div >
+        <a href="https://www.google.com/"
+          ><img 
+            alt="Get it on Google Play"
+            src="assets/img/playstore.png"
+            height="113"
+        /></a>
+        <br/>
+        <a
+          href="https://apps.apple.com/us/app/wikipedia/id324715238?itsct=apps_box&amp;itscg=30200"
+          ><img
+            style="padding-left:25px; padding-top: 30px; padding-bottom: 12px; height: 80px;"
+            src="assets/img/appstore.svg"
+            alt="Download on the App Store"
+        /></a>
       </div>
-      <!-- Masthead Subheading-->
-      <p class="masthead-subheading font-weight-light mb-0">Memorize Anything Using Spaced Repetition & Flashcards</p>
-    </div>
-    <div>
-      <a href='https://www.google.com/'><img alt='Get it on Google Play'
-          src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'
-          height="110" /></a>
-    </div>
-    <div>
-      <a href="https://apps.apple.com/us/app/wikipedia/id324715238?itsct=apps_box&amp;itscg=30200"
-        style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img
-          src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-US?size=250x83&amp;releaseDate=1250467200&h=9688c2e0352c6b38851c4ebc255d7099"
-          alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
-    </div>
-  </header>
-</body>
+      <section class="feature">
+      </section>
+      <button class="blinking-button" id="scrollButton">
+      <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293z"/>
+      </svg>
+      </button>
+`
 
+    </main>
+    </div>
+  </body>
+  
+  <script>
+    const sections = document.querySelectorAll('.feature');
+    const scrollButton = document.getElementById('scrollButton');
+    let currentSectionIndex = 0;
+
+    scrollButton.addEventListener('click', () => {
+        currentSectionIndex = (currentSectionIndex + 1) % sections.length;
+        sections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Hide button when reaching the last section
+    window.addEventListener('scroll', () => {
+        const lastSection = sections[sections.length - 1];
+        const lastSectionTop = lastSection.getBoundingClientRect().top;
+        scrollButton.style.display = lastSectionTop < window.innerHeight ? 'none' : 'flex';
+    });
+</script>
 </html>
